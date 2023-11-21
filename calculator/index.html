@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .title > h1 {
+        margin-left: 540px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      tr,
+      th,
+      td {
+        padding: 10px;
+        margin: 10px;
+      }
+      #pill {
+        border-radius: 32px;
+        padding: 16px 70px 16px 55px;
+      }
+      #container {
+        margin: 10px 0px 40px 485px;
+        width: 27%;
+        background-color: black;
+        padding-left: 10px;
+        border-radius: 5px;
+      }
+      #display {
+        padding-top: 30px;
+
+        margin: 10px 80px 20px 0px;
+        width: 92%;
+
+        font-size: xx-large;
+        font-weight: 300;
+        color: white;
+        background-color: black;
+        border: 2px solid black;
+        text-align: right;
+      }
+
+      #operand {
+        background-color: rgb(48, 45, 45);
+        border: 2px solid rgb(48, 45, 45);
+        color: white;
+        font-size: 20px;
+      }
+
+      #pill {
+        background-color: rgb(48, 45, 45);
+        border: 2px solid rgb(48, 45, 45);
+        color: white;
+        font-size: 20px;
+      }
+      #operand:hover,
+      #pill:hover {
+        background-color: rgb(31, 31, 31);
+        border-color: rgb(31, 31, 31);
+      }
+      #symbols {
+        background-color: rgb(153, 153, 153);
+        border: 2px solid rgb(153, 153, 153);
+        color: black;
+        font-weight: 600;
+        font-size: 20px;
+      }
+      #symbols:hover {
+        background-color: rgb(204, 204, 204);
+        border-color: rgb(204, 204, 204);
+      }
+      #operation {
+        background-color: rgb(255, 166, 0);
+        border: 2px solid rgb(255, 166, 0);
+        color: white;
+        font-weight: 640;
+        font-size: 20px;
+      }
+      #operation:hover {
+        background-color: rgb(255, 186, 59);
+        border-color: rgb(255, 186, 59);
+      }
+
+      @media (max-width: 1536px) {
+        .title > h1 {
+          margin-left: 500px;
+        }
+        #container {
+          background-color: black;
+          width: 27%;
+          margin-left: 450px;
+        }
+      }
+      @media (max-width: 1280px) {
+        .title > h1 {
+          margin-left: 400px;
+        }
+        #container {
+          background-color: black;
+          width: 38%;
+          margin-left: 330px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .title > h1 {
+          margin-left: 320px;
+        }
+        #container {
+          background-color: black;
+          width: 45%;
+          margin-left: 280px;
+        }
+      }
+      @media (max-width: 768px) {
+        .title > h1 {
+          margin-left: 250px;
+        }
+        #container {
+          background-color: black;
+          width: 54%;
+          margin-left: 200px;
+        }
+      }
+      @media (max-width: 640px) {
+        .title > h1 {
+          margin-left: 200px;
+        }
+        #container {
+          background-color: black;
+          width: 69%;
+          margin-left: 150px;
+        }
+      }
+      @media (max-width: 475px) {
+        .title > h1 {
+          margin-left: 100px;
+        }
+        #container {
+          background-color: black;
+          width: 86%;
+          margin-left: 30px;
+        }
+      }
+      @media (max-width: 414px) {
+        .title > h1 {
+          margin-left: 100px;
+        }
+        #container {
+          background-color: black;
+          width: 86%;
+          margin-left: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: whitesmoke">
+    <header>
+      <div class="title">
+        <h1>CALCULATOR</h1>
+      </div>
+    </header>
+    <div id="container">
+      <div>
+        <input type="text" id="display" />
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <input
+                  type="button"
+                  value="AC"
+                  class="rounded-circle mt-1 m px-3 py-3"
+                  id="symbols"
+                  onclick="display.value= '' "
+                />
+              </th>
+
+              <th>
+                <input
+                  type="button"
+                  value="DE"
+                  class="rounded-circle mt-1 px-3 py-3"
+                  id="symbols"
+                  onclick="display.value=display.value.toString().slice(0,-1)"
+                />
+              </th>
+              <th>
+                <input
+                  type="button"
+                  value="%"
+                  class="rounded-circle mt-1 px-4 py-3 fw-bold"
+                  id="symbols"
+                  onclick="display.value+='%'"
+                />
+              </th>
+              <th>
+                <input
+                  type="button"
+                  value="/"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operation"
+                  onclick="display.value+='/'"
+                />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input
+                  type="button"
+                  value="7"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='7'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="8"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='8'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="9"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='9'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="x"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operation"
+                  onclick="display.value+='*'"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="button"
+                  value="4"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='4'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="5"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='5'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="6"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='6'"
+                />
+              </td>
+              <th>
+                <input
+                  type="button"
+                  value="-"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operation"
+                  onclick="display.value+='-'"
+                />
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="button"
+                  value="1"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='1'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="2"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='2'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="3"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operand"
+                  onclick="display.value+='3'"
+                />
+              </td>
+              <th>
+                <input
+                  type="button"
+                  value="+"
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operation"
+                  onclick="display.value+='+'"
+                />
+              </th>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="button"
+                  value="0"
+                  class="mt-1"
+                  id="pill"
+                  onclick="display.value+='0'"
+                />
+              </td>
+              <td>
+                <input
+                  type="button"
+                  value="."
+                  class="rounded-circle mt-1 px-4 py-3 fs-4"
+                  id="operand"
+                  onclick="display.value+='.'"
+                />
+              </td>
+
+              <th>
+                <input
+                  type="button"
+                  value="="
+                  class="rounded-circle mt-1 px-4 py-3"
+                  id="operation"
+                  onclick="display.value=eval(display.value)"
+                />
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
