@@ -1,0 +1,91 @@
+@import url("https://fonts.google.com/specimen/League+Spartan?query=spar");
+* {
+  font-family: "Spartan", sans-serif;
+  margin: 0;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #f6f6f9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  padding: 22px 90px 20px 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+header h2 {
+  font-weight: 600;
+}
+.navbar a {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  padding: 12px;
+  font-weight: 500;
+}
+.istImage {
+  background-image: url("/ResponsiveWebsite/girlFashion.jpg");
+  height: 90vh;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 0;
+}
+.hero {
+  padding: 250px 0px 0px 30px;
+}
+.hero h1,
+h3,
+h5 {
+  padding: 8px;
+}
+#btn{ 
+    margin:12px 0px 0px 1px;
+    padding: 10px 10px 10px 10px;
+    border-radius:18px;
+    background-color:lightsalmon;
+ 
+    border-style: none;
+    text-decoration: none;
+} 
+#btn a {
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    font-size: larger;
+    font-weight: 600;
+}
+ .f1 button{
+  margin: 2px 0px 0px 5px;
+
+ 
+} 
+.features{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* temporary */
+.shopping {
+     
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px;
+  padding: 2px 2px;
+  gap: 200px 200px;
+  margin-left: 50px;
+
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 250px;
+  background: #f6f6f9;
+  margin-top: 20px;
+  padding-top: 50px;
+}
+
+
+
